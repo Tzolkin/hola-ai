@@ -1,6 +1,6 @@
 ---
 name: pair
-description: Pair programming with the AI on an already refined story. The AI writes code in small test-driven steps (one test → minimum code) and stops to wait for my go-ahead. Never commits.
+description: Pair programming with the AI on an already refined story. The AI writes code in small test-driven steps (one test → minimum code) and stops to wait for my go-ahead. When the flow finishes, it moves the file from .cursor/stories to .cursor/done. Never commits.
 disable-model-invocation: true
 ---
 
@@ -67,3 +67,9 @@ When the list is green:
 ## 5. Commit
 
 **Never commit.** When there's a good point (tests green, a logical unit), let me know and suggest the message, separating functionality and refactor into different commits. I make the commit.
+
+## 6. Done
+
+When this flow finishes (the test list is green and the check above is done), move `.cursor/stories/<slug>.md` to `.cursor/done/<slug>.md`. `<slug>` is the name of the file in `.cursor/stories` this session is working from. Create `.cursor/done` if it doesn't exist. The file leaves `.cursor/stories`.
+
+If `.cursor/done/<slug>.md` already exists, name the new file `.cursor/done/YYYYMMDD-<slug>.md`, with today's date prepended. Show the path.

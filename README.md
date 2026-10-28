@@ -13,9 +13,9 @@ The AI splits, proposes and writes code in small steps. You decide.
 
 | Skill | What it does | What it never does |
 |---|---|---|
-| [`/backlog`](skills/backlog/SKILL.md) | Turns an idea into a short backlog of vertical, one-line user stories. | Invent requirements, technical stories, estimates. |
+| [`/backlog`](skills/backlog/SKILL.md) | Turns an idea into a short backlog of vertical, one-line user stories, writes it to `.cursor/backlogs/<slug>.md`, and moves it to `.cursor/stories/<slug>.md` once you accept it. | Invent requirements, technical stories, estimates. |
 | [`/story`](skills/story/SKILL.md) | Takes **one** story, adds 2–3 Given/When/Then acceptance criteria and a mini plan (≤5 bullets) for your approval. | Write code. If it needs more than 3 criteria, it proposes splitting the story. |
-| [`/pair`](skills/pair/SKILL.md) | Pair programming: the AI drives, you navigate. One test → red → minimum code → green, then it stops and waits. | Commit, edit tests to make them pass, add things you didn't ask for. |
+| [`/pair`](skills/pair/SKILL.md) | Pair programming: the AI drives, you navigate. One test → red → minimum code → green, then it stops and waits. When the flow finishes, it moves `.cursor/stories/<slug>.md` to `.cursor/done/<slug>.md` (or `YYYYMMDD-<slug>.md` if that slug is already there). | Commit, edit tests to make them pass, add things you didn't ask for. |
 
 Each skill's output is the next one's input, as blocks ready to paste into your tracker.
 

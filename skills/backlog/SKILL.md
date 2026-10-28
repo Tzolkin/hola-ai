@@ -1,6 +1,6 @@
 ---
 name: backlog
-description: Turns a software idea or a discussed feature into a backlog of short, vertical user stories. No acceptance criteria or implementation; that's /story's job.
+description: Turns a software idea or a discussed feature into a backlog of short, vertical user stories, writes it to the project's .cursor/backlogs folder, and moves it to .cursor/stories once accepted. No acceptance criteria or implementation; that's /story's job.
 disable-model-invocation: true
 ---
 
@@ -17,7 +17,8 @@ Your job is to help me split what I tell you into user stories. I bring the requ
    - Permissions or roles model
    - Offline or sync
    - Multi-language or multi-currency
-4. Propose the backlog. I adjust it.
+4. Propose the backlog. I adjust it. Keep the file in `.cursor/backlogs` up to date while we adjust.
+5. When I accept the backlog, move the file to `.cursor/stories`. Don't move it before I accept.
 
 ## Rules
 
@@ -43,4 +44,10 @@ Expensive decisions: <the ones that apply, or "none">
 
 Add `Requires: #N` only when a story makes no sense without another.
 
-When done, offer to save the context and stack in `CLAUDE.md` (or `AGENTS.md`). The stories go to my tracker; don't save them to files unless I ask.
+## Where to save it
+
+Write that block to `.cursor/backlogs/<slug>.md` in the project. `<slug>` is a short kebab-case name of the idea (for example `invoice-reminders`). Create `.cursor/backlogs` if it doesn't exist. If a file with that name already exists, ask before overwriting.
+
+When I accept the backlog, move `.cursor/backlogs/<slug>.md` to `.cursor/stories/<slug>.md`. Create `.cursor/stories` if it doesn't exist. If the destination already exists, ask before overwriting. The file leaves `.cursor/backlogs`.
+
+Show the path each time it changes: the draft in `.cursor/backlogs`, then the accepted file in `.cursor/stories`.

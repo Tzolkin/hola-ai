@@ -10,7 +10,7 @@ We refine a single story, right before building it. You propose and I decide.
 
 ## Steps
 
-1. **Read the story** I give you (pasted text, GitHub issue, Jira ticket, etc.) and review the current code and `CLAUDE.md` to understand the context.
+1. **Read the story** I give you (pasted text, GitHub issue, Jira ticket, etc.) and review the current code and `AGENTS.md` to understand the context.
 2. **Acceptance criteria.** Propose 2–3 in Given/When/Then format. They only describe *what* the user sees or gets, never *how* it's implemented.
 3. **If it needs more than 3 criteria, don't bloat it: propose splitting it.** Deliver the new stories in backlog format (`As a…, I want…, so that…`) for me to add to the tracker, and we continue with the first one.
 4. **Mini plan.** 5 bullets max, no code or file names. How it cuts through the layers, with the minimum that meets the criteria.
